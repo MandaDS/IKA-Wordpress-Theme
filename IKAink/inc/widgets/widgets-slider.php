@@ -63,7 +63,13 @@ class ikaink_widget_slider extends WP_Widget
 					$loop = new WP_Query( $args );
 					while ( $loop->have_posts() ) : $loop->the_post(); ?>
 				    <div class="<?php if($count == 0) { ?>active <?php } ?>item">
-				      <?php echo the_post_thumbnail($post_id, '', array(
+				    <?php 
+				    // If URL is present open link
+		            $url = get_post_meta(get_the_ID(), 'ikaink_textfield', true);
+		            if($url != '') { ?>
+		            <a href="<?php echo $url; ?>">
+		            <?php }
+				      echo the_post_thumbnail($post_id, '', array(
 								'alt'	=> trim(strip_tags( $attachment->post_excerpt )),
 								'title'	=> trim(strip_tags( $attachment->post_excerpt )),
 						)); 
@@ -72,7 +78,12 @@ class ikaink_widget_slider extends WP_Widget
 				        $caption = get_post_meta(get_the_ID(), 'ikaink_textarea', true);
 				        if($caption != '') { ?>
 				        	<div class="carousel-caption"><p><?php echo $caption; ?></p></div>
-				        <?php } ?>
+				        <?php }
+				        // If URL is present open link
+			            $url = get_post_meta(get_the_ID(), 'ikaink_textfield', true);
+			            if($url != '') { ?>
+			            </a>
+			            <?php } ?>
 				    </div>
 				    <?php $count++; endwhile; ?>
 			    </div>
