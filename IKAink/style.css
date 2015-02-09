@@ -3,7 +3,7 @@ Theme Name: IKA
 Theme URI: http://ika.ink
 Author: Manda
 Author URI: http://ika.ink
-Description: IKA, a responsive theme featuring basic page layouts, colors, and custom portfolio display with slider.
+Description: IKA, a responsive theme featuring basic page layouts, colors, and custom portfolio display with image slider.
 Version: 1.0
 License: No License
 License URI: No License
@@ -307,6 +307,7 @@ a:active {
 }
 }
 
+
 /* =Header Components
 -------------------------------------------------------------- */
 
@@ -427,6 +428,7 @@ a:active {
 }
 }
 
+
 /* =Post display
 -------------------------------------------------------------- */
 
@@ -502,12 +504,6 @@ a:active {
 .post .post-body > p {
     padding-bottom: 20px;
 }
-/*.post .post-body .btn {
-    position: absolute;
-    bottom: 10px;
-    right: 20px;
-    z-index: 99;
-}*/
 .post .dashicons, .post-body .dashicons {
     border: 3px solid #fff;
     -webkit-border-radius: 10px;
@@ -539,8 +535,10 @@ a:active {
     margin: 10px;
 }
 
+
 /* =Portfolio display
 -------------------------------------------------------------- */
+
 .portfolio {
     background-color: rgba(255, 255, 255, 0.1);
     -webkit-border-radius: 10px;
@@ -606,7 +604,7 @@ a:active {
 .image-inside-center {
     padding: 5px;
     position: relative;
-    top: 25%;
+    top: 10%;
 }
 .image-header {
     display: block;
@@ -746,12 +744,6 @@ a:active {
     float: left;
     margin: 20px 30px 0 20px;
 }
-/* li.categories, li.cat-item, li.current-cat, li.current-cat-parent, ul.children { 
-    display: inline-block;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}*/ 
 @media (max-width: 767px) { /* Landscape phone to portrait tablet size adjustment */
 .portfolio h1 {
     font-size: 24px;
@@ -759,7 +751,36 @@ a:active {
 .post .main-image {
     max-width: 400px;
 }
+.image-header {
+    font-size: 20px;
 }
+.image-text {
+    font-size: 12px;
+}
+.image-inside:hover .image-header {
+    top: 10px;
+}
+.image-inside:hover .image-text {
+    top: 0px;
+}
+}
+@media (max-width: 468px) {/* mobile size adjustment */
+.image-inside-center .image-header {
+    font-size: 14px!important;
+    margin-top: 0;
+    top: 10px;
+}
+.image-inside-center .image-text {
+    font-size: 10px!important;
+    top: -25px;
+}
+.image-inside-center {
+    padding: 5px;
+    position: relative;
+    top: 2%;
+}
+}
+
 
 /* =Comments display
 -------------------------------------------------------------- */
@@ -922,8 +943,10 @@ a:active {
 }
 }
 
+
 /* =Slider
 -------------------------------------------------------------- */
+
 #slider {
     background-color: rgba(255, 255, 255, 0.1);
     -webkit-border-radius: 10px;
@@ -934,9 +957,6 @@ a:active {
 }
 #slider h1 span {
     font-size: 20px;
-}
-#slider .carousel {
-    min-width: 400px;
 }
 #slider a.carousel-control {
     color: inherit;
@@ -957,6 +977,30 @@ a:active {
     font-size: 18px;
     font-weight: bold;
     text-shadow: 0 0 4px #030303;
+}
+@media (max-width: 990px) { 
+#slider .carousel-caption {
+    font-size: 14px;
+    font-weight: bold;
+    padding-bottom: 0;
+    text-shadow: 0 0 4px #030303;
+}   
+.carousel-indicators {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    margin-bottom: 0;
+}
+#slider .carousel-control .glyphicon-right {
+    height: 20px;
+    width: 20px;
+    font-size: 20px;
+}
+#slider .carousel-control .glyphicon-left {
+    height: 20px;
+    width: 20px;
+    font-size: 20px;
+}
 }
 #slider .carousel-control.left {
     -webkit-border-radius: 20px 0 0 20px;
@@ -1017,6 +1061,44 @@ a:active {
     top: 50%;
     z-index: 5;
     display: inline-block;
+}
+@media (max-width: 796px) { 
+#slider .carousel-caption {
+    font-size: 12px;
+    font-weight: bold;
+    padding-bottom: 0;
+    text-shadow: 0 0 4px #030303;
+}   
+.carousel-indicators {
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    margin-bottom: 0;
+}
+#slider .carousel-inner .item {
+    padding: 10px;
+}
+}
+@media (max-width: 468px) {
+#slider .carousel-inner .item {
+    padding:15px 0;
+}
+.carousel-indicators {
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    margin-bottom: 0;
+}
+#slider .carousel-control .glyphicon-right {
+    height: 14px;
+    width: 14px;
+    font-size: 14px;
+}
+#slider .carousel-control .glyphicon-left {
+    height: 14px;
+    width: 14px;
+    font-size: 14px;
+}
 }
 
 
@@ -1316,11 +1398,7 @@ a img.aligncenter {
     margin-top: 10px;
 }
 .jetpack-likes-widget-unloaded {
-    visibility: hidden;
-    height: 0;
-    width: 0;
-    margin: 0;
-    padding: 0;
+ 
 }
 pre[class*="language-"] {
     margin: 15px auto!important;
