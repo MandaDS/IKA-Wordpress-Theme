@@ -56,11 +56,10 @@
             </div>
         </div>
 
-        <?php if  ( is_active_sidebar( 'footer_bottom' )): ?>
         <div class="bottom-widget">
             <?php dynamic_sidebar( 'footer_bottom' ); ?>
+            <div class="copy-right">IKA theme created by <a href="http://ika.ink" target="_blank">MandaDS</a>. Proudly powered by Wordpress.</div>
         </div>
-        <?php endif; ?>
     </footer>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/main.js"></script>
